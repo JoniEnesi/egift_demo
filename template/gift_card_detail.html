@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="shortcut icon" type="x-icon" href="../image/favicon.png">
+</head>
+<body>
+
+
+
+<!-- fillimi navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html">Gift Card</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../template/help.html">Help</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../template/login.html">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="add" href="../template/cart_views.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="pro-count cart-items-count">0</span>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- mbarimi navbar-->
+
+<div class="container">
+
+    <form method="post">
+        <div class="row">
+            <div class="col-12 col-lg-4 card_img rens">
+                <div class="card-select">
+                    <img src="../image/adidas.jpg" alt="image" id="bannerimage">
+                    <input type="hidden" name="image" id="selected-image" value="">
+                    <p name="title">Hope you enjoy this Adidas Gift Card!</p>
+                </div>
+                <div class="card-price">
+                    <h3 id="default_price" name="amount">Amount</h3>
+                    <p>Adidas Gift Card</p>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 card_detail">
+                <h3>Adidas Gift Card</h3>
+                <p>By <a href="#">Adidas</a></p>
+                <div class="reviews">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <p>9999+ customer ratings</p>
+                </div>
+                <hr>
+                <div class="part2">
+                    <h6>1. Gift card design</h6>
+                    <div class="row">
+                        <div class="col image_design">
+                            <img src="../image/adidas.jpg" alt="image">
+                            <img src="../image/luckycharm.png" alt="image">
+                            <img src="../image/amazing.jpg" alt="image">
+                            <img src="../image/Love.png" alt="image">
+                            <img src="../image/thank-you.jpg" alt="image">
+                            <img src="../image/thanks.webp" alt="image">
+                            <img src="../image/youdidit.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="part3">
+                    <h6>2. Gift card details</h6>
+                    <div class="amount">
+                        <p>Amount</p>
+                        <input name="amount" type="hidden" id="selected-amount" value="">
+                        <input name="amount" type="button" class="amount-button" value="25$" onclick="selectAmount(25)">
+                        <input name="amount" type="button" class="amount-button" value="50$" onclick="selectAmount(50)">
+                        <input name="amount" type="button" class="amount-button" value="75$" onclick="selectAmount(75)">
+                        <input name="amount" type="button" class="amount-button" value="100$" onclick="selectAmount(100)">
+                        <input name="amount" type="button" class="amount-button" value="150$" onclick="selectAmount(150)">
+                        <input name="amount" type="button" class="amount-button" value="200$" onclick="selectAmount(200)">
+                        <div class="input-group flex-nowrap">
+                            <input name="custom_amount" type="text" class="form-control" placeholder="Enter amount" aria-label="Enter amount" aria-describedby="addon-wrapping" oninput="updateSelectedAmount(this.value)">
+                        </div>
+                    </div>
+                    <div class="delivery">
+                        <p>Delivery by email :</p>
+                        <input type="email" name="email" id="product-email" class="amount-button1 btn active" aria-checked="true" placeholder="Recipient email">
+                    </div>
+                    <div class="delivery">
+                        <p>Delivery on :</p>
+                        <input type="datetime-local" name="datetime" id="product_datatime" class="amount-button1 btn active" aria-checked="true">
+                    </div>
+                </div>
+            </div>
+            <div class="pay_table mb-5">
+                <p>Qty: <input type="number" value="1" name="quantity" id="product-quantity" class="w-25"> gift card</p>
+                <p id="custom_price">Amount</p>
+                <input type="hidden" value="" class="product-id" name="" id="">
+                <input type="hidden" value="" class="product-title" name="" id="">
+                <button type="button" onclick="validation(event)" class="pay_table_button button" id="add-to-cart-btn">Add to cart<i class="fa-solid fa-cart-shopping"></i></button>
+                <div class="hr">
+                    <hr>
+                    <p>or</p>
+                    <hr>
+                </div>
+                <button type="submit" onclick="checkRequiredFields(event)" id="buy_now" style="text-decoration: none; color: #000" class="pay_table_button1">Buy now</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<!--mbarimi permbajtja-->
+
+
+
+       <!--Nis footer-->
+    <footer class="container-fluid px-0">
+        <div class="info">
+            <div class="colone">
+                <a href="../index.html"><h3>Gift Card</h3></a>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+            <div class="colone1">
+                <h6>HOW IT WORKS</h6>
+                <ul>
+                    <li><a href="#"><span> <i class="fa-solid fa-address-card"></i> </span> Sing Up </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-money-check-dollar"></i> </span> Buy Discount Gift Cards </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-calendar-days"></i> </span> 100 Day Guarantee </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-truck-fast"></i> </span> Shipping & Delivery </a></li>
+                    <li><a href="#"><span> <i class="fa-regular fa-credit-card"></i> </span> Buy In Bulk </a></li>
+                    <li><a href="#"><span> <i class="fa-regular fa-circle"></i> </span> FAQ </a></li>
+                </ul>
+            </div>
+            <div class="colone1">
+                <h6>ABOUT</h6>
+                <ul>
+                    <li><a href="#"><span> <i class="fa-regular fa-address-card"></i> </span> About Gift Card </a></li>
+                    <li><a href="#"><span> <i class="fa-regular fa-envelope"></i> </span> Contact Us </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-check"></i> </span> Terms of Services </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-lock"></i> </span> Privacy Policy </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-star"></i> </span> Reviews </a></li>
+                </ul>
+            </div>
+            <div class="colone1">
+                <h6>CHECK BALANCE</h6>
+                <ul>
+                    <li><a href="#"><span> <i class="fa-solid fa-mug-hot"></i> </span> Starbucks </a></li>
+                    <li><a href="#"><span> <i class="fa-regular fa-hand-peace"></i> </span> Best Buy </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-money-bill-transfer"></i> </span> Home Depot </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-industry"></i> </span> Walmart </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-masks-theater"></i> </span> Amc Theatres </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-utensils"></i> </span> Darden Restaurants </a></li>
+                </ul>
+            </div>
+            <div class="colone1">
+                <h6>CATEGORIES</h6>
+                <ul>
+                    <li><a href="#"><span> <i class="fa-solid fa-earth-europe"></i> </span> All Categories </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-utensils"></i> </span> Restaurants </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-basketball"></i> </span> Sporting Goods </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-store"></i> </span> Departament Stores </a></li>
+                    <li><a href="#"><span> <i class="fa-solid fa-film"></i> </span> Movies & Entertainments </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="stepfooter">
+            <p>Follow Us</p>
+            <div class="social_app">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="copy">
+          Copyright &#169; <span id="year">2020</span>. All right Reserved.
+        </div>
+    </footer>
+    <!-- Mbaron footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="../js/jQuery.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/add-to-cart.js"></script>
+<script src="../js/gift_card_detail.js"></script>
+<script src="../js/message_timer.js"></script>
+
+</body>
+</html>
